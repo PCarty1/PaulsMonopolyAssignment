@@ -1,5 +1,10 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
+
 public class CardCell extends Cell {
     private int type;
     
@@ -8,8 +13,9 @@ public class CardCell extends Cell {
         this.type = type;
     }
     
-    public void playAction() {
-    }
+    public boolean playAction(String msg) {
+        return true;
+        }
     
     public int getType() {
         return type;

@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import junit.framework.TestCase;
 
 public class PlayerTest extends TestCase {
@@ -23,14 +27,14 @@ public class PlayerTest extends TestCase {
 		assertEquals("Blue 3", player.getProperty(0).getName());
 		PropertyCell cell =
 			(PropertyCell) gameMaster.getGameBoard().queryCell("Blue 3");
-		assertSame(player, cell.getOwner());
+		assertSame(player, cell.getTheOwner());
 	}
 
 	public void testSameGoCell() {
 		GameBoard gameboard = gameMaster.getGameBoard();
 		Player player1 = new Player();
 		Player player2 = new Player();
-		Cell go = gameboard.queryCell("Go");
+		IOwnable go = gameboard.queryCell("Go");
 		assertSame(go, player1.getPosition());
 		assertSame(go, player2.getPosition());
 	}

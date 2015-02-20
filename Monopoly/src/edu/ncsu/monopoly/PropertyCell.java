@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 public class PropertyCell extends Cell {
 	private String colorGroup;
 	private int housePrice;
@@ -24,27 +28,34 @@ public class PropertyCell extends Cell {
 	}
 
 	public int getRent() {
-		int rentToCharge = rent;
-		String [] monopolies = owner.getMonopolies();
-		for(int i = 0; i < monopolies.length; i++) {
-			if(monopolies[i].equals(colorGroup)) {
-				rentToCharge = rent * 2;
-			}
-		}
-		if(numHouses > 0) {
-			rentToCharge = rent * (numHouses + 1);
-		}
-		return rentToCharge;
-	}
+        int rentToCharge = rent;
+        rentToCharge = calculateMonopoliesRent(rentToCharge);
+        if(numHouses > 0) {
+                rentToCharge = rent * (numHouses + 1);
+        }
+        return rentToCharge;
+}
+	
+	private int calculateMonopoliesRent(int rentToCharge) {
+        String [] monopolies = theOwner.getMonopolies();
+        for(int i = 0; i < monopolies.length; i++) {
+                if(monopolies[i].equals(colorGroup)) {
+                        rentToCharge = rent * 2;
+                }
+        }
+        return rentToCharge;
+}
 
-	public void playAction() {
+	public boolean playAction(String msg) {
 		Player currentPlayer = null;
 		if(!isAvailable()) {
 			currentPlayer = GameMaster.instance().getCurrentPlayer();
-			if(owner != currentPlayer) {
-				currentPlayer.payRentTo(owner, getRent());
+			if(theOwner != currentPlayer) {
+				currentPlayer.payRentTo(theOwner, getRent());
+				return true;
 			}
 		}
+		return false;
 	}
 
 	public void setColorGroup(String colorGroup) {

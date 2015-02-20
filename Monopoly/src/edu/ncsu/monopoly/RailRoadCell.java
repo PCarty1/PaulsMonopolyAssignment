@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 public class RailRoadCell extends Cell {
 	static private int baseRent;
 	static public String COLOR_GROUP = "RAILROAD";
@@ -18,16 +22,18 @@ public class RailRoadCell extends Cell {
 	}
 
 	public int getRent() {
-		return RailRoadCell.baseRent * (int)Math.pow(2, owner.numberOfRR() - 1);
+		return RailRoadCell.baseRent * (int)Math.pow(2, theOwner.numberOfRR() - 1);
 	}
 	
-	public void playAction() {
+	public boolean playAction(String msg) {
 		Player currentPlayer = null;
 		if(!isAvailable()) {
 			currentPlayer = GameMaster.instance().getCurrentPlayer();
-			if(owner != currentPlayer) {
-				currentPlayer.payRentTo(owner, getRent());
+			if(theOwner != currentPlayer) {
+				currentPlayer.payRentTo(theOwner, getRent());
+				return true;
 			}
 		}
+		return false;
 	}
 }

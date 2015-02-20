@@ -1,16 +1,21 @@
 package edu.ncsu.monopoly;
 
-public abstract class Cell {
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
+
+public abstract class Cell implements IOwnable {
 	private boolean available = true;
 	private String name;
-	protected Player owner;
+	protected Player theOwner; //Exercise two
 
 	public String getName() {
 		return name;
 	}
 
-	public Player getOwner() {
-		return owner;
+	public Player getTheOwner() {
+		return theOwner;
 	}
 	
 	public int getPrice() {
@@ -21,18 +26,19 @@ public abstract class Cell {
 		return available;
 	}
 	
-	public abstract void playAction();
+	public abstract boolean playAction(String msg);
+
+	
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
-	
-	void setName(String name) {
-		this.name = name;
-	}
 
-	public void setOwner(Player owner) {
-		this.owner = owner;
+	public void setTheOwner(Player owner) {
+		this.theOwner = owner;
 	}
     
     public String toString() {

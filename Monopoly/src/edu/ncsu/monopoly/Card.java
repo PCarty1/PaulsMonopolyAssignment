@@ -1,9 +1,10 @@
 package edu.ncsu.monopoly;
 
-
-/*
- * Card
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
  */
+
+
 public abstract class Card {
 
     public static int TYPE_CHANCE = 1;

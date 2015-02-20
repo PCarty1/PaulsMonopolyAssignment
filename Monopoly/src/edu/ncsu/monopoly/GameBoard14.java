@@ -1,5 +1,8 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
 
 public class GameBoard14 extends GameBoard {
 	public GameBoard14() {

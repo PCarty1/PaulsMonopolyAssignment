@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 public class MockGUI implements MonopolyGUI {
     private boolean btnDrawCardState, btnEndTurnState, btnGetOutOfJailState;
     private boolean[] btnTradeState = new boolean[2];

@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly.gui;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -144,7 +148,7 @@ public class PlayerPanel extends JPanel {
         lblName.setText(player.getName());
         lblMoney.setText("$ " + player.getMoney());
         StringBuffer buf = new StringBuffer();
-        Cell[] cells = player.getAllProperties();
+        IOwnable[] cells = player.getAllProperties();
         for (int i = 0; i < cells.length; i++) {
             buf.append(cells[i] + "\n");
         }

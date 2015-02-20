@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly.gui;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import edu.ncsu.monopoly.Cell;
 import edu.ncsu.monopoly.Player;
 import edu.ncsu.monopoly.UtilityCell;
@@ -9,7 +13,7 @@ public class UtilCellInfoFormatter implements CellInfoFormatter {
 	public String format(Cell cell) {
         UtilityCell c = (UtilityCell)cell;
         StringBuffer buf = new StringBuffer();
-        Player owner = cell.getOwner();
+        Player owner = cell.getTheOwner();
         String ownerName = "";
         if(owner != null) {
         	ownerName = owner.getName();

@@ -1,7 +1,12 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import java.util.ArrayList;
 import java.util.Iterator;
+
 
 
 public class GameMaster {
@@ -50,7 +55,7 @@ public class GameMaster {
 
     public void btnEndTurnClicked() {
 		setAllButtonEnabled(false);
-		getCurrentPlayer().getPosition().playAction();
+		getCurrentPlayer().getPosition().playAction(null);
 		if(getCurrentPlayer().isBankrupt()) {
 			gui.setBuyHouseEnabled(false);
 			gui.setDrawCardEnabled(false);

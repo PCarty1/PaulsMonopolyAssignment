@@ -1,6 +1,10 @@
 
 package edu.ncsu.monopoly.gui;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;

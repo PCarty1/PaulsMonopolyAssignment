@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -7,13 +11,13 @@ public class GameBoard {
 
 	private ArrayList cells = new ArrayList();
     private ArrayList chanceCards = new ArrayList();
-	//the key of colorGroups is the name of the color group.
+	//the key of colourGroups is the name of the colour group.
 	private Hashtable colorGroups = new Hashtable();
 	private ArrayList communityChestCards = new ArrayList();
 	private GameMaster gameMaster;
 	
 	public GameBoard() {
-		Cell go = new GoCell();
+		IOwnable go = new GoCell();
 		addCell(go);
 	}
 
@@ -25,7 +29,7 @@ public class GameBoard {
         }
     }
 	
-	public void addCell(Cell cell) {
+	public void addCell(IOwnable cell) {
 		cells.add(cell);
 	}
 	
@@ -58,8 +62,7 @@ public class GameBoard {
 	}
 	
 	public PropertyCell[] getPropertiesInMonopoly(String color) {
-		PropertyCell[] monopolyCells = 
-			new PropertyCell[getPropertyNumberForColor(color)];
+		PropertyCell[] monopolyCells = new PropertyCell[getPropertyNumberForColor(color)];
 		int counter = 0;
 		for (int i = 0; i < getCellNumber(); i++) {
 			Cell c = getCell(i);

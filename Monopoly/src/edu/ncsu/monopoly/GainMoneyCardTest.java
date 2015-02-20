@@ -1,5 +1,10 @@
 package edu.ncsu.monopoly;
 
+
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import junit.framework.TestCase;
 
 public class GainMoneyCardTest extends TestCase {
@@ -12,7 +17,7 @@ public class GainMoneyCardTest extends TestCase {
 		gameMaster.setNumberOfPlayers(1);
 		gameMaster.reset();
 		gameMaster.setGUI(new MockGUI());
-		gainMoneyCard = new MoneyCard("Get 50 dollars", 50, Card.TYPE_CC);
+		gainMoneyCard = new MoneyCard("Get 50 euros", 50, Card.TYPE_CC);
 		gameMaster.getGameBoard().addCard(gainMoneyCard);
     }
     

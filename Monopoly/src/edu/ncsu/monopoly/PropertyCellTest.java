@@ -1,6 +1,10 @@
 
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import junit.framework.TestCase;
 
 public class PropertyCellTest extends TestCase {
@@ -23,7 +27,7 @@ public class PropertyCellTest extends TestCase {
 		gameMaster.getPlayer(0).purchase();
 		gameMaster.switchTurn();
 		gameMaster.movePlayer(1, cellIndex);
-		cell.playAction();
+		cell.playAction(null);
 		assertEquals(
 				1500 - cell.getRent(),
 				gameMaster.getPlayer(1).getMoney());

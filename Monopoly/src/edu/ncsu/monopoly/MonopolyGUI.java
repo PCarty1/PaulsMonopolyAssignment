@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 public interface MonopolyGUI {
 	public void enableEndTurnBtn(int playerIndex);
 	public void enablePlayerTurn(int playerIndex);

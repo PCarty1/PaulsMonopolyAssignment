@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import junit.framework.TestCase;
 
 public class LoseMoneyCardTest extends TestCase {
@@ -12,7 +16,7 @@ public class LoseMoneyCardTest extends TestCase {
 		gameMaster.setNumberOfPlayers(1);
 		gameMaster.reset();
 		gameMaster.setGUI(new MockGUI());
-		loseMoneyCard = new MoneyCard("Pay 20 dollars", -20, Card.TYPE_CC);
+		loseMoneyCard = new MoneyCard("Pay 20 euros", -20, Card.TYPE_CC);
 		gameMaster.getGameBoard().addCard(loseMoneyCard);
     }
     

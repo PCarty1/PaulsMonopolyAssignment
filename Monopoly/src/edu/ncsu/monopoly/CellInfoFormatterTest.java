@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import edu.ncsu.monopoly.gui.GoCellInfoFormatter;
 import edu.ncsu.monopoly.gui.InfoFormatter;
 import junit.framework.TestCase;
@@ -20,7 +24,7 @@ public class CellInfoFormatterTest extends TestCase {
         int propertyValue = 120;
         String propertyLabel = "<html><b><font color='" +
 				propertyColor +"'>" + propertyName + "</font></b><br>" +
-				"$" + propertyValue +
+				"€" + propertyValue +
 				"<br>Owner: " + ownerName +
 				"<br>* " + numHouses +
 				"</html>";
@@ -30,7 +34,7 @@ public class CellInfoFormatterTest extends TestCase {
         cell.setColorGroup(propertyColor);
         Player p = new Player();
         p.setName(ownerName);
-        cell.setOwner(p);
+        cell.setTheOwner(p);
         cell.setNumHouses(numHouses);
         assertEquals(propertyLabel, InfoFormatter.cellInfo(cell));
     }

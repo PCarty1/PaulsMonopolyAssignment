@@ -1,6 +1,11 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 public class GameBoardRailRoad extends GameBoard {
+	
 	public GameBoardRailRoad() {
 		super();
 		PropertyCell blue1 = new PropertyCell();

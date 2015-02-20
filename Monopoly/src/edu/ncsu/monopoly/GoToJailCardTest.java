@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import junit.framework.TestCase;
 
 public class GoToJailCardTest extends TestCase {
@@ -19,13 +23,13 @@ public class GoToJailCardTest extends TestCase {
 		Card card = gameMaster.drawCCCard();
 		assertEquals(jailCard, card);
 		card.applyAction();
-		Cell cell = gameMaster.getCurrentPlayer().getPosition();
+		IOwnable cell = gameMaster.getCurrentPlayer().getPosition();
 		assertEquals(gameMaster.getGameBoard().queryCell("Jail"), cell);
     }
     
     public void testJailCardLabel() {
         assertEquals("Go to Jail immediately without collecting" +
-        		" $200 when passing the GO cell", jailCard.getLabel());
+        		" €200 when passing the GO cell", jailCard.getLabel());
     }
     
     public void testJailCardUI() {
@@ -34,7 +38,7 @@ public class GoToJailCardTest extends TestCase {
         assertFalse(gameMaster.getGUI().isEndTurnButtonEnabled());
         gameMaster.btnDrawCardClicked();
         assertFalse(gameMaster.getGUI().isDrawCardButtonEnabled());
-		Cell cell = gameMaster.getCurrentPlayer().getPosition();
+		IOwnable cell = gameMaster.getCurrentPlayer().getPosition();
 		assertEquals(gameMaster.getGameBoard().queryCell("Jail"), cell);
 		assertTrue(gameMaster.getGUI().isEndTurnButtonEnabled());
     }

@@ -1,14 +1,19 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 public class GoCell extends Cell {
 	public GoCell() {
 		super.setName("Go");
 		setAvailable(false);
 	}
 
-	public void playAction() {
+	public boolean playAction(String msg) {
+		return true;
 	}
 	
-	void setName(String name) {
+	public void setName(String name) {
 	}
 }

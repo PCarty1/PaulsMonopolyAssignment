@@ -1,5 +1,11 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
+
+
 import junit.framework.TestCase;
 
 public class CardsTest extends TestCase {
@@ -13,8 +19,8 @@ public class CardsTest extends TestCase {
         gameMaster.setNumberOfPlayers(1);
         gameMaster.reset();
         gameMaster.setGUI(new MockGUI());
-        ccCard = new MoneyCard("Get 50 dollars", 50, Card.TYPE_CC);
-        chanceCard = new MoneyCard("Lose 50 dollars", -50, Card.TYPE_CHANCE);
+        ccCard = new MoneyCard("Get 50 euros", 50, Card.TYPE_CC);
+        chanceCard = new MoneyCard("Lose 50 euros", -50, Card.TYPE_CHANCE);
         gameMaster.getGameBoard().addCard(ccCard);
     }
     
@@ -22,6 +28,6 @@ public class CardsTest extends TestCase {
         Card card = gameMaster.drawCCCard();
         assertEquals(Card.TYPE_CC, ccCard.getCardType());
         card = gameMaster.drawChanceCard();
-        assertEquals(Card.TYPE_CC, chanceCard.getCardType());
+        assertEquals(Card.TYPE_CHANCE, chanceCard.getCardType());
     }
 }

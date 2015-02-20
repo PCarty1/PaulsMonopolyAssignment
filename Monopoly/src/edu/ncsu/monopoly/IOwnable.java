@@ -4,6 +4,8 @@ package edu.ncsu.monopoly;
  * Author: Paul Carty
  */
 
-public interface TradeDialog {
-    TradeDeal getTradeDeal();
+public interface IOwnable {
+	
+	public abstract boolean playAction(String msg);
+
 }

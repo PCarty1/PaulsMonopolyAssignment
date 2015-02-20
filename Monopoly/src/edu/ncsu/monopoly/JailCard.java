@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 
 public class JailCard extends Card {
     int type;
@@ -20,6 +24,6 @@ public class JailCard extends Card {
 
     public String getLabel() {
         return "Go to Jail immediately without collecting" +
-        		" $200 when passing the GO cell";
+        		" €200 when passing the GO cell";
     }
 }

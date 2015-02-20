@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 public class UtilityCell extends Cell {
 
 	public static final String COLOR_GROUP = "UTILITY";
@@ -14,23 +18,26 @@ public class UtilityCell extends Cell {
 	}
 
 	public int getRent(int diceRoll) {
-		if(owner.numberOfUtil() == 1) {
+		if(theOwner.numberOfUtil() == 1) {
 			return diceRoll * 4;
-		} else if (owner.numberOfUtil() >= 2) {
+		} else if (theOwner.numberOfUtil() >= 2) {
 			return diceRoll * 10;
 		}
 		return 0;
 	}
 
-	public void playAction() {
+	public boolean playAction(String msg) {
 		Player currentPlayer = null;
 		if(!isAvailable()) {
 			currentPlayer = GameMaster.instance().getCurrentPlayer();
-			if(owner != currentPlayer) {
+			if(theOwner != currentPlayer) {
 				GameMaster.instance().utilRollDice();
 				int diceRoll = GameMaster.instance().getUtilDiceRoll();
-				currentPlayer.payRentTo(owner, getRent(diceRoll));
+				currentPlayer.payRentTo(theOwner, getRent(diceRoll));
+				return true;
 			}
 		}
+		return false;
 	}
+	
 }

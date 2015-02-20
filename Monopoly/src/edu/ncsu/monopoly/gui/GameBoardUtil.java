@@ -1,5 +1,9 @@
 package edu.ncsu.monopoly.gui;
 
+/* Date: 20th Feb 2015
+ * Author: Paul Carty
+ */
+
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
