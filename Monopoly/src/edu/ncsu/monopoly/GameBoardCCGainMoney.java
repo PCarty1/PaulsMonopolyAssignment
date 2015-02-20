@@ -13,6 +13,8 @@ public class GameBoardCCGainMoney extends GameBoard {
 		JailCell jail = new JailCell();
 		IOwnable chance1 = new CardCell(Card.TYPE_CHANCE, "Chance 1");
 		
+		//^ IOwnable rather than cell - Exercise 4 - Extract Interface Refactoring
+		
 		Card ccCard1 = new MoneyCard("Win €50", 50, Card.TYPE_CC);
         Card chanceCard1 = new MoneyCard("Win €30", 30, Card.TYPE_CHANCE);
 		

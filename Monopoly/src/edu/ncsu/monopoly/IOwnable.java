@@ -4,8 +4,8 @@ package edu.ncsu.monopoly;
  * Author: Paul Carty
  */
 
-public interface IOwnable {
+public interface IOwnable {  //Exercise 4 - Extract Interface Refactoring
 	
-	public abstract boolean playAction(String msg);
+	public abstract boolean playAction(String msg); //Exercise 7- change method signature
 
 }

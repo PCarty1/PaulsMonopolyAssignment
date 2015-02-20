@@ -55,7 +55,7 @@ public class GameMaster {
 
     public void btnEndTurnClicked() {
 		setAllButtonEnabled(false);
-		getCurrentPlayer().getPosition().playAction(null);
+		getCurrentPlayer().getPosition().playAction(null); //Exercise 4 - Extract Interface Refactoring
 		if(getCurrentPlayer().isBankrupt()) {
 			gui.setBuyHouseEnabled(false);
 			gui.setDrawCardEnabled(false);

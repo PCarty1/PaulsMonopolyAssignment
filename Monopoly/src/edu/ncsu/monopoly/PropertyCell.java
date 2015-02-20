@@ -27,7 +27,7 @@ public class PropertyCell extends Cell {
 		return sellPrice;
 	}
 
-	public int getRent() {
+	public int getRent() {  //Extract Method in exercise 5 which takes calculateMonopoliesRent  behaviour & creates a method
         int rentToCharge = rent;
         rentToCharge = calculateMonopoliesRent(rentToCharge);
         if(numHouses > 0) {
@@ -36,7 +36,7 @@ public class PropertyCell extends Cell {
         return rentToCharge;
 }
 	
-	private int calculateMonopoliesRent(int rentToCharge) {
+	private int calculateMonopoliesRent(int rentToCharge) {  //Extract Method in exercise 5
         String [] monopolies = theOwner.getMonopolies();
         for(int i = 0; i < monopolies.length; i++) {
                 if(monopolies[i].equals(colorGroup)) {
